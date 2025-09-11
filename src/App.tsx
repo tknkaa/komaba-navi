@@ -1,27 +1,16 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useLocation } from "./hooks/useLocaton";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Map from "./pages/Map";
+import Building7 from "./pages/Building7";
 
 export default function App() {
-	const { position } = useLocation();
-	console.log(position);
 	return (
 		<>
-			<MapContainer
-				center={position}
-				zoom={100}
-				scrollWheelZoom={true}
-				style={{ minHeight: "100vh", minWidth: "100vw" }}
-			>
-				<TileLayer
-					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-				/>
-				<Marker position={position}>
-					<Popup>
-						You are here!
-					</Popup>
-				</Marker>
-			</MapContainer>
+			<BrowserRouter>
+				<Routes>
+					<Route index element={<Map />} />
+					<Route path="building7" element={<Building7 />} />
+				</Routes>
+			</BrowserRouter>
 		</>
-	);
+	)
 }
