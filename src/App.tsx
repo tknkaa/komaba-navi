@@ -8,7 +8,7 @@ export default function App() {
 		<>
 			<MapContainer
 				center={position}
-				zoom={13}
+				zoom={100}
 				scrollWheelZoom={true}
 				style={{ minHeight: "100vh", minWidth: "100vw" }}
 			>
