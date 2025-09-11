@@ -18,7 +18,7 @@ export default function App() {
 				/>
 				<Marker position={position}>
 					<Popup>
-						A pretty CSS3 popup. <br /> Easily customizable.
+						You are here!
 					</Popup>
 				</Marker>
 			</MapContainer>
